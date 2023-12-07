@@ -5,13 +5,13 @@ cabal-version: 2.2
 -- see: https://github.com/sol/hpack
 
 name:           EchoFern
-version:        0.1.0.0
-description:    Please see the README on GitHub at <https://github.com/githubuser/EchoFern#readme>
-homepage:       https://github.com/githubuser/EchoFern#readme
-bug-reports:    https://github.com/githubuser/EchoFern/issues
-author:         Author name here
-maintainer:     example@example.com
-copyright:      2023 Author name here
+version:        1.1.1.1
+description:    Please see the README on GitHub at <https://github.com/ThAckerman/EchoFern#readme>
+homepage:       https://github.com/ThAckerman/EchoFern#readme
+bug-reports:    https://github.com/ThAckerman/EchoFern/issues
+author:         Thayer H. Ackerman
+maintainer:     ackermanth@appstate.edu
+copyright:      2023 Thayer H. Ackerman
 license:        BSD-3-Clause
 license-file:   LICENSE
 build-type:     Simple
@@ -21,7 +21,7 @@ extra-source-files:
 
 source-repository head
   type: git
-  location: https://github.com/githubuser/EchoFern
+  location: https://github.com/ThAckerman/EchoFern
 
 library
   exposed-modules:

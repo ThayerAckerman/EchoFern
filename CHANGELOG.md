@@ -8,7 +8,12 @@ and this project adheres to the
 
 ## Unreleased
 
-## 1.1.1.1 - 2023-12-6
+## 1.1.1.1 - 2023-12-7
+
+### Fixed
+- Base edge now correctly re-positions itself even after having panned the window
+
+## 1.1.1.0 - 2023-12-6
 
 ### Added
 

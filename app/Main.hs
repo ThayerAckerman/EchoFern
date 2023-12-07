@@ -44,16 +44,16 @@ main = play (InWindow "Window" (1000, 1000) (10, 10)) (makeColor 0.8 0.8 0.8 1) 
 -- Handle Input Events
 handleKeys :: Event -> World -> World
 handleKeys (EventKey (MouseButton RightButton) Down _ (x', y')) (World []       0 g) = World ([Base (0, 0) (x', y'), Recurse (0, 0) (x', y')])              0 g
-handleKeys (EventKey (MouseButton RightButton) Down _ (x', y')) (World (b:e:es) 0 g) = World (Base (0, 0) (x', y') : Recurse (sndEdge e) (x', y') : e : es) 0 g
+handleKeys (EventKey (MouseButton RightButton) Down _ (x', y')) (World (b:e:es) 0 g) = World (Base (fstEdge b) (x', y') : Recurse (sndEdge e) (x', y') : e : es) 0 g
 handleKeys (EventKey (MouseButton LeftButton) Down _ (x', y'))  (World []       0 g) = World ([Base (0, 0) (x', y'), Plain (0, 0) (x', y')])                0 g
-handleKeys (EventKey (MouseButton LeftButton) Down _ (x', y'))  (World (b:e:es) 0 g) = World (Base (0, 0) (x', y') : Plain (sndEdge e) (x', y') : e : es)   0 g
+handleKeys (EventKey (MouseButton LeftButton) Down _ (x', y'))  (World (b:e:es) 0 g) = World (Base (fstEdge b) (x', y') : Plain (sndEdge e) (x', y') : e : es)   0 g
 
 handleKeys (EventKey (SpecialKey KeyBackspace) Down _ _) (World []       0 g) = World []     0 g
 handleKeys (EventKey (SpecialKey KeyBackspace) Down _ _) (World [b, e]      0 g) = World []  0 g
-handleKeys (EventKey (SpecialKey KeyBackspace) Down _ _) (World (b:e1:e2:es) 0 g) = World (Base (0, 0) (sndEdge e2) : e2 : es) 0 g
+handleKeys (EventKey (SpecialKey KeyBackspace) Down _ _) (World (b:e1:e2:es) 0 g) = World (Base (fstEdge b) (sndEdge e2) : e2 : es) 0 g
 handleKeys (EventKey (SpecialKey KeyDelete) Down _ _) (World []       0 g) = World []     0 g
 handleKeys (EventKey (SpecialKey KeyDelete) Down _ _) (World [b, e]      0 g) = World []  0 g
-handleKeys (EventKey (SpecialKey KeyDelete) Down _ _) (World (b:e1:e2:es) 0 g) = World (Base (0, 0) (sndEdge e2) : e2 : es) 0 g
+handleKeys (EventKey (SpecialKey KeyDelete) Down _ _) (World (b:e1:e2:es) 0 g) = World (Base (fstEdge b) (sndEdge e2) : e2 : es) 0 g
 
 handleKeys (EventKey (SpecialKey KeyEnter) Down _ _) (World bp 0 g) = World bp 1 g
 handleKeys (EventKey (SpecialKey KeyEnter) Down _ _) (World bp n g) = World bp (n+1) g
@@ -72,7 +72,7 @@ handleKeys (EventKey (Char '=') Down _ _ ) (World bp n g) = World (dilateBasePol
 
 handleKeys _ es = es
 
--- A function to Step the World one Iteration (second)
+-- A function to Step the World one Iteration
 step :: Float -> World -> World
 step f w = w
 
