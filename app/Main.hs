@@ -39,7 +39,7 @@ plant = Gradient (makeColor 0.79 1 0.33 1) (makeColor 0.22 0.69 0.19 1) (makeCol
 -- USER I/O AND VISUALIZATION --
 -- Main I/O
 main :: IO ()
-main = play (InWindow "Window" (1000, 1000) (10, 10)) (makeColor 0.8 0.8 0.8 1) 1 initialWorld pictureWorld handleKeys step
+main = play (InWindow "Window" (1000, 1000) (10, 10)) (makeColor 0.55 0.55 0.57 1) 1 initialWorld pictureWorld handleKeys step
 
 -- Handle Input Events
 handleKeys :: Event -> World -> World

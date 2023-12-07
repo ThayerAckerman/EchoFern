@@ -13,6 +13,9 @@ and this project adheres to the
 ### Fixed
 - Base edge now correctly re-positions itself even after having panned the window
 
+### Changed
+- Background is now a darker grey-blue color
+
 ## 1.1.1.0 - 2023-12-6
 
 ### Added
