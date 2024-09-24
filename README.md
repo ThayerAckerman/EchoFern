@@ -20,7 +20,7 @@ Through only a few clicks, you can see your very own fractal in a variety of col
 Upon [installing git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git), this repository can be cloned using the following command at the desired directory:
 
 ```
-git clone https://github.com/ThAckerman/EchoFern.git
+git clone https://github.com/ThayerAckerman/EchoFern.git
 ```
 
 ### Stack
